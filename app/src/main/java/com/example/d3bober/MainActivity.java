@@ -31,12 +31,20 @@ public class MainActivity extends AppCompatActivity {
 
     public void tapBober(View view) {
         n += 1;
-        textBottom.setText("Вы потапали " + n + " раз");
+
+        /*if(n%10>1 && n%10<5 && n/10%10!=1){
+            textBottom.setText("Вы потапали " + n + " раза");
+        } else {
+            textBottom.setText("Вы потапали " + n + " раз");
+        }*/
+
+        textBottom.setText("Вы потапали " + n + (n%10>1 && n%10<5 && n/10%10!=1 ? " раза" : " раз"));
+
         switch (n){
             case 10: textTitle.setText("Тапай, не останавливайся."); break;
             case 21: case 22: case 23: case 24:
-            case 25: textTitle.setText("Тапай, не останавливайся."); break;
-            case 30: textTitle.setText("Тапай, не останавливайся."); break;
+            case 25: textTitle.setText("Прооодолжай тапать."); break;
+            case 30: textTitle.setText("Да ты ГЕНИЙ!!!"); break;
             default: textTitle.setText("Потапай бобра!");
         }
     }
