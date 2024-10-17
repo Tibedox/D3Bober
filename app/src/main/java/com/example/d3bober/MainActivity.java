@@ -13,6 +13,7 @@ import androidx.core.view.WindowInsetsCompat;
 public class MainActivity extends AppCompatActivity {
     int n = 0;
     TextView textBottom;
+    TextView textTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,10 +26,14 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
         textBottom = findViewById(R.id.textBottom);
+        textTitle = findViewById(R.id.textTop);
     }
 
     public void tapBober(View view) {
         n += 1;
         textBottom.setText("Вы потапали " + n + " раз");
+        if(n == 10){
+            textTitle.setText("Тапай, не останавливайся.");
+        }
     }
 }
